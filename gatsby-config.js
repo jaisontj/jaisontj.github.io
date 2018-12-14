@@ -4,121 +4,44 @@ const pxtorem = require('postcss-pxtorem')
 module.exports = {
   siteMetadata: {
     url: 'https://lumen.netlify.com',
-    title: 'Blog by John Doe',
-    subtitle:
-      'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
-    copyright: '© All rights reserved.',
-    disqusShortname: '',
-    menu: [
+    title: 'Jaison Titus',
+    subtitle: 'Currently exploring Systems and Network Engineering as a Masters student at Northeastern University',
+    copyright: 'Made using Gatsby. A fork of gatsby-v2-starter-lumen',
+    name: 'Jaison Titus',
+    links: [
       {
-        label: 'Articles',
-        path: '/',
+        name: 'Github',
+        icon_name: 'icon-github-circled',
+        href: 'https://github.com/jaisontj',
       },
       {
-        label: 'About me',
-        path: '/about/',
+        name: 'Stackoverflow',
+        icon_name: 'icon-stackoverflow',
+        href: 'https://stackoverflow.com/users/3907246/jaison-titus',
       },
       {
-        label: 'Contact me',
-        path: '/contact/',
+        name: 'Medium',
+        icon_name: 'icon-medium',
+        href: 'https://medium.com/@JaisonTitus',
+      },
+      {
+        name: 'Twitter',
+        icon_name: 'icon-twitter',
+        href: 'https://twitter.com/JaisonTitus',
+      },
+      {
+        name: 'LinkedIn',
+        icon_name: 'icon-linkedin',
+        href: 'https://www.linkedin.com/in/jaisontj/',
+      },
+      {
+        name: 'Email',
+        icon_name: 'icon-mail-alt',
+        href: 'mailto:jaison.titus@gmail.com',
       },
     ],
-    author: {
-      name: 'John Doe',
-      email: '#',
-      telegram: '#',
-      twitter: '#',
-      github: '#',
-      rss: '#',
-      vk: '#',
-    },
   },
   plugins: [
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-feed',
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                site_url: url
-                title
-                description: subtitle
-              }
-            }
-          }
-        `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMarkdownRemark } }) =>
-              allMarkdownRemark.edges.map(edge =>
-                Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.frontmatter.description,
-                  date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.site_url + edge.node.fields.slug,
-                  guid: site.siteMetadata.site_url + edge.node.fields.slug,
-                  custom_elements: [{ 'content:encoded': edge.node.html }],
-                })
-              ),
-            query: `
-              {
-                allMarkdownRemark(
-                  limit: 1000,
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                  filter: { frontmatter: { layout: { eq: "post" }, draft: { ne: true } } }
-                ) {
-                  edges {
-                    node {
-                      html
-                      fields {
-                        slug
-                      }
-                      frontmatter {
-                        title
-                        date
-                        layout
-                        draft
-                        description
-                      }
-                    }
-                  }
-                }
-              }
-            `,
-            output: '/rss.xml',
-          },
-        ],
-      },
-    },
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 960,
-            },
-          },
-          {
-            resolve: 'gatsby-remark-responsive-iframe',
-            options: { wrapperStyle: 'margin-bottom: 1.0725rem' },
-          },
-          'gatsby-remark-prismjs',
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
-        ],
-      },
-    },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: { trackingId: 'UA-73379983-2' },
@@ -133,24 +56,24 @@ module.exports = {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         query: `
-            {
-              site {
-                siteMetadata {
-                  url
-                }
-              }
-              allSitePage(
-                filter: {
-                  path: { regex: "/^(?!/404/|/404.html|/dev-404-page/)/" }
-                }
-              ) {
-                edges {
-                  node {
-                    path
-                  }
-                }
-              }
-          }`,
+			{
+			  site {
+				siteMetadata {
+				  url
+				}
+			  }
+			  allSitePage(
+				filter: {
+				  path: { regex: "/^(?!/404/|/404.html|/dev-404-page/)/" }
+				}
+			  ) {
+				edges {
+				  node {
+					path
+				  }
+				}
+			  }
+		  }`,
         output: '/sitemap.xml',
         serialize: ({ site, allSitePage }) =>
           allSitePage.edges.map(edge => {
@@ -162,8 +85,6 @@ module.exports = {
           }),
       },
     },
-    'gatsby-plugin-offline',
-    'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-sass',
