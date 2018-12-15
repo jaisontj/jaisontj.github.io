@@ -1,3 +1,0 @@
-exports.onServiceWorkerUpdateFound = () => {
-  window.reload()
-}
