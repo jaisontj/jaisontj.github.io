@@ -36,7 +36,10 @@ export const pageQuery = graphql`
 	    name
         title
         subtitle
-        copyright
+        copyright {
+			name
+			link
+		}
 		source
 		menu {
 			label	

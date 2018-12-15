@@ -6,7 +6,10 @@ module.exports = {
     url: 'https://jaisontj.github.io',
     title: 'Jaison Titus',
     subtitle: 'Currently exploring Systems and Network Engineering as a Masters student at Northeastern University',
-    copyright: '© gatsby-v2-starter-lumen',
+    copyright: {
+      name: '© gatsby-v2-starter-lumen',
+      link: 'https://github.com/GatsbyCentral/gatsby-v2-starter-lumen',
+    },
     source: 'https://github.com/jaisontj/jaisontj.github.io/tree/dev',
     name: 'Jaison Titus',
     menu: [

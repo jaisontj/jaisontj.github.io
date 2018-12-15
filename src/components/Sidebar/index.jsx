@@ -47,7 +47,12 @@ class Sidebar extends React.Component {
           <div>
             <Menu data={menu} />
             <Links data={links} />
-            <p className="sidebar__copyright">{copyright}</p>
+            <p>
+              <a className="sidebar__copyright" href={source} target="_blank">Source Code</a>
+            </p>
+            <p>
+              <a className="sidebar__copyright" href={copyright.link} target="_blank">{copyright.name}</a>
+            </p>
           </div>
         </div>
       </div>
