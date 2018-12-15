@@ -69,6 +69,21 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Jaison',
+        short_name: 'Jaison',
+        start_url: '/',
+        background_color: '#B3D4FC',
+        theme_color: '#B3D4FC',
+        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
+        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
+        display: 'standalone',
+        icon: 'src/pages/Photo1.jpg', // This path is relative to the root of the site.
+      },
+    },
+    'gatsby-plugin-offline',
+    {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         query: `
