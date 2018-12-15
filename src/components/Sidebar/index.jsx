@@ -15,8 +15,9 @@ class Sidebar extends React.Component {
       subtitle,
       copyright,
 	  links,
+      menu,
+      source,
     } = this.props.data.site.siteMetadata
-	  const menu = []
     /* eslint-disable jsx-a11y/img-redundant-alt */
     const authorBlock = (
       <div>

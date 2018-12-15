@@ -3,11 +3,24 @@ const pxtorem = require('postcss-pxtorem')
 
 module.exports = {
   siteMetadata: {
-    url: 'https://lumen.netlify.com',
+    url: 'https://jaisontj.github.io',
     title: 'Jaison Titus',
     subtitle: 'Currently exploring Systems and Network Engineering as a Masters student at Northeastern University',
-    copyright: 'Made using Gatsby. A fork of gatsby-v2-starter-lumen',
+    copyright: '© gatsby-v2-starter-lumen',
+    source: 'https://github.com/jaisontj/jaisontj.github.io/tree/dev',
     name: 'Jaison Titus',
+    menu: [
+      {
+        label: 'About',
+        path: '/',
+        internal: true,
+      },
+      {
+        label: 'Resume',
+        path: '',
+        internal: false,
+      },
+    ],
     links: [
       {
         name: 'Github',
@@ -44,7 +57,7 @@ module.exports = {
   plugins: [
     {
       resolve: 'gatsby-plugin-google-analytics',
-      options: { trackingId: 'UA-73379983-2' },
+      options: { trackingId: '' },
     },
     {
       resolve: 'gatsby-plugin-google-fonts',
