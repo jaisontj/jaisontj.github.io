@@ -82,7 +82,6 @@ module.exports = {
         icon: 'src/pages/Photo1.jpg', // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
